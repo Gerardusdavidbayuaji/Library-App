@@ -1,5 +1,7 @@
 import React from 'react'
 import Navbar from './navbar'
+import Login from '@/pages/auth/login';
+// import Register from '@/pages/auth/register';
 
 const Layout = () => {
 
@@ -8,11 +10,12 @@ const Layout = () => {
         <Navbar/>
         <div className="container grow mx-auto py-10 px-10 flex">
           <div className="w-1/2 flex flex-col justify-center">
-            <img className='w-1/2 h-3/5 ml-20 flex justify-center items-center' src="src/assets/image-home.png" alt="cover home page"/>
-            <p className="mx-20 leading-7 mt-6 font-roboto"><span className='scroll-m-20 text-2xl font-semibold tracking-tight font-roboto'>Library App</span> is a platform that provides access <br/> to the latest technology resources and information, <br/>including books, journals, articles, and tutorials, <br/> to support technology development.</p>
+            <img className='w-4/6 h-auto pl-10 flex justify-center items-center' src="src/assets/image-home.png" alt="cover home page"/>
+            <p className="pl-10 mt-6 font-roboto text-lg" style={{ color: '#0A4D68'}}><span className='text-4xl font-semibold tracking-tight font-roboto' style={{ color: '#05BFDB' }}>Library App </span> is a platform that provides access <br/> to the latest technology resources and information, <br/>including books, journals, articles, and tutorials, <br/> to support technology development.</p>
           </div>
           <div className="w-1/2">
-            <p>Kolom 2</p>
+            <Login/>
+            {/* <Register/> */}
           </div>
         </div>
     </div>
