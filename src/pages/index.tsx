@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
-import Layout from "../components/layout";
+import React from 'react';
+import ContentLayout from "@/components/contentlayout";
 
-const Index = () => {
-    return<Layout>
-        <Button>CLIK HERE</Button>
-    </Layout>
-}
+
+const Index: React.FC = () => {
+  return (
+    <ContentLayout/>
+  );
+};
 
 export default Index;
