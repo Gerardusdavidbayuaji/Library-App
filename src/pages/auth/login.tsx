@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import InputForm from "@/components/form";
-import Register from "./register";
+import RegisterPage from "./register";
 import { Link } from "react-router-dom";
 
 
 
-const Login: React.FC = () => {
+const LoginPage: React.FC = () => {
     return (
         <div className="flex flex-col justify-center font-roboto h-screen" data-type="login">
             <div className="w-full max-w-xs mx-auto">
@@ -25,10 +25,10 @@ const Login: React.FC = () => {
                 <div className="flex">
                     <div>
                         <h3 className="text-sm pr-10" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
-                        <a href="/register" className="text-sm" style={{ color: '#05BFDB'}}>Register here</a>
+                        <Link to="/register" className="text-sm" style={{ color: '#05BFDB'}}>Register here</Link>
                     </div>
                     <div>
-                        <a href="#"  className="text-sm pl-6" style={{ color: '#0A4D68' }}>Forget Password?</a>
+                        <Link to="#"  className="text-sm pl-6" style={{ color: '#0A4D68' }}>Forget Password?</Link>
                     </div>
                 </div>
                 <Button className="px-8 float-right border rounded-full" style={{background: "#0A4D68",
@@ -39,4 +39,4 @@ const Login: React.FC = () => {
     
 }
 
-export default Login
+export default LoginPage

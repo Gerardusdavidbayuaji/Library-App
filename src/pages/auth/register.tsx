@@ -1,9 +1,10 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import InputForm from "@/components/form";
 import { Link } from "react-router-dom";
 
-const Register: React.FC = () => {
+import { Button } from "@/components/ui/button";
+import InputForm from "@/components/form";
+
+const RegisterPage: React.FC = () => {
     return (
         <div className="flex flex-col justify-center font-roboto h-screen" data-type="register">
             <div className="w-full max-w-xs mx-auto">
@@ -38,7 +39,7 @@ const Register: React.FC = () => {
                 <div className="flex">
                     <div>
                         <h3 className="text-sm pr-8" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
-                        <a href="/login" className="text-sm" style={{ color: '#05BFDB'}}>Login instead</a>
+                        <Link to="/login" className="text-sm" style={{ color: '#05BFDB'}}>Login instead</Link>
                     </div>
                     <Button className="px-8 ml-10 float-right border rounded-full" style={{background: "#0A4D68",}}>Login</Button>
                 </div>
@@ -48,4 +49,4 @@ const Register: React.FC = () => {
     
 }
 
-export default Register
+export default RegisterPage;

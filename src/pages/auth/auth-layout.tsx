@@ -1,7 +1,7 @@
 // authlayout.tsx
 import React from 'react';
-import Login from './login';
-import Register from './register';
+import LoginPage from './login';
+import RegisterPage from './register';
 
 interface AuthLayoutProps {
   type: "login" | "register";
@@ -11,10 +11,10 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ type }) => {
   return (
     <div>
       {type === "login" && (
-        <Login />
+        <LoginPage />
       )}
       {type === "register" && (
-        <Register />
+        <RegisterPage />
       )}
     </div>
   );
