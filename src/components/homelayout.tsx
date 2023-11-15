@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from './navbarhome'
 import AuthLayout from '@/pages/auth/authlayout'
-import NavbarHome from './navbarcontent';
+import NavbarHome from './navbarhome';
+
 
 const HomeLayout: React.FC = () => {
   return (

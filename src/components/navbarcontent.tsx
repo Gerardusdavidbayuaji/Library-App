@@ -28,8 +28,7 @@ const NavbarContent: React.FC = () => {
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem> 
-            <DropdownMenuItem>login</DropdownMenuItem>
-            <DropdownMenuItem>Register</DropdownMenuItem>
+            <DropdownMenuItem>History Borrow</DropdownMenuItem>
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

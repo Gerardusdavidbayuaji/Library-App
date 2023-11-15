@@ -2,11 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Index from './pages'
 import './styles/index.css'
-import ContentLayout from './components/contentlayout'
+import DetailBook from './pages/books/details'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    {/* <Index/> */}
-    <ContentLayout/>
-  </React.StrictMode>,
+  <>
+  <Index/>
+  </>,
 );

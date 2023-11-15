@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Navbar: React.FC = () => {
+const NavbarHome: React.FC = () => {
   return (
     <header className='w-full sticky top-0' style={{ backgroundColor: '#05BFDB' }}>
       <div className='grid-cols flex container items-center justify-between py-5 px-20'>
@@ -15,4 +15,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default NavbarHome;
