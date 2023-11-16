@@ -41,7 +41,7 @@ const RegisterPage: React.FC = () => {
                         <h3 className="text-sm pr-8" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
                         <Link to="/login" className="text-sm" style={{ color: '#05BFDB'}}>Login instead</Link>
                     </div>
-                    <Button className="px-8 ml-10 float-right border rounded-full" style={{background: "#0A4D68",}}>Login</Button>
+                    <Button className="px-8 ml-10 float-right border rounded-full" style={{background: "#0A4D68",}}>Register</Button>
                 </div>
             </div>
         </div>

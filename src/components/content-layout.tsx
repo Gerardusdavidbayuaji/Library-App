@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import { getBooks, Book } from "@/utils/apis/books";
 
 import { useToast } from "@/components/ui/use-toast";
@@ -11,7 +11,7 @@ import FooterContent from "./footer-content";
 
 
 interface ContentLayoutProps {
-  children: React.ReactNode;
+  children?: ReactNode;
 }
 
 const ContentLayout: React.FC<ContentLayoutProps> = ({ children }) => {

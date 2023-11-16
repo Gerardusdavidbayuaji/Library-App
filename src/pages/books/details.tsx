@@ -5,6 +5,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Book, getDetailBook } from "@/utils/apis/books";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import NavbarContent from "@/components/navbar-content";
 
 const DetailBook = () => {
   const { toast } = useToast();
@@ -17,7 +18,7 @@ const DetailBook = () => {
 
   async function fetchData() {
     try {
-      const result = await getDetailBook('11');
+      const result = await getDetailBook('1');
       setBook(result.payload);
     } catch (error: any) {
       toast({
