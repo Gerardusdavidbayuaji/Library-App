@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from './navbar-home'
-import AuthLayout from '@/pages/auth/auth-layout'
 import NavbarHome from './navbar-home';
+import RegisterPage from '@/pages/auth/register';
+import LoginPage from '@/pages/auth/login';
 
 
 const HomeLayout: React.FC = () => {
@@ -14,7 +14,7 @@ const HomeLayout: React.FC = () => {
             <p className="pl-10 mt-6 font-roboto text-lg" style={{ color: '#0A4D68'}}><span className='text-4xl font-semibold tracking-tight font-roboto' style={{ color: '#05BFDB' }}>Library App </span> is a platform that provides access <br/> to the latest technology resources and information, <br/>including books, journals, articles, and tutorials, <br/> to support technology development.</p>
           </div>
           <div className="w-1/2">
-          <AuthLayout type="login" />
+          <LoginPage />
           </div>
         </div>
     </div>

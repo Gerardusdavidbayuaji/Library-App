@@ -49,7 +49,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children }) => {
           <img src="src/assets/image-content.png" alt="logo content" className='w-48 h-auto m-5'/>
         </div>
         <div className='flex justify-center items-center py-10 mx-auto gap-2'>
-          <form action="" className='w-96'>
+          <form action="" className='w-96' style={{ borderColor: "#0A4D68" }}>
             <InputForm 
             label="" 
             type="" 
@@ -57,7 +57,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children }) => {
             nama="" 
           />
           </form>
-        <Button className="px-auto border rounded-full " style={{background: "#05BFDB"}}>Search</Button>
+        <Button className="px-auto border rounded-full " style={{background: "#0A4D68"}}>Search</Button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
           {books.map((book) => (
