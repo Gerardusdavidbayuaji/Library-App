@@ -1,6 +1,8 @@
-import { Book } from "./types";
-import { booksSampleData } from "./sampel-data";
+import { addBookSchema, AddBookSchema, editbookSchemaa, EditBookSchema, book, Book } from "./types";
 import { getBooks, getDetailBook } from "./api";
+import { booksSampleData } from "./sampel-data";
 
-export type {Book};
+
 export {getBooks, getDetailBook, booksSampleData};
+export {editbookSchemaa, addBookSchema, book };
+export type {EditBookSchema, AddBookSchema, Book};

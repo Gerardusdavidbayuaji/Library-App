@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
 
 import { Profile, getProfile } from "@/utils/apis/user";
 
-const Index = () => {
+const ProfilePage = () => {
   const { toast } = useToast();
 
   const [profile, setProfile] = useState<Profile>();
@@ -48,4 +48,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ProfilePage;

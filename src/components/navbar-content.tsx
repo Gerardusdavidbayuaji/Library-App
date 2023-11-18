@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Link } from 'react-router-dom';
-import EditProfilePage from '@/pages/profile/edit-profile';
+import ProfilePage from '@/pages/profile/profile-page';
 import HistoryBorrowPage from '@/pages/profile/history-borrow';
 import HomeLayout from './home-layout';
 import ContentLayout from './content-layout';
@@ -33,7 +33,7 @@ const NavbarContent: React.FC = () => {
           <DropdownMenuContent className="w-44" align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild><Link to="/edit-profile">Profile</Link></DropdownMenuItem> 
+            <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem> 
             <DropdownMenuItem asChild><Link to="/history-borrow">History Borrow</Link></DropdownMenuItem>
             <DropdownMenuItem asChild><Link to="/">Logout</Link></DropdownMenuItem>
           </DropdownMenuContent>
