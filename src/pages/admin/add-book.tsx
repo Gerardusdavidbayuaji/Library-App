@@ -9,36 +9,31 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form } from "@/components/ui/form";
 
-import {
-  registerAccount,
-  registerSchema,
-  RegisterSchema,
-} from "@/utils/apis/auth";
+import { addBookSchema, AddBookSchema } from "@/utils/apis/books";
 
-const RegisterPage: React.FC = () => {
+const AddBookPage: React.FC = () => {
 
     const navigate = useNavigate();
     const { toast } = useToast();
   
-    const form = useForm<RegisterSchema>({
-      resolver: zodResolver(registerSchema),
+    const form = useForm<AddBookSchema>({
+      resolver: zodResolver(addBookSchema),
       defaultValues: {
-        full_name: "",
-        email: "",
-        password: "",
-        repassword: "",
-        address: "",
-        phone_number: "",
+        title: "",
+        author: "",
+        isbn: "",
+        category: "",
+        description: "",
       },
     });
 
-    async function onSubmitRegister(data: RegisterSchema) {
+    async function onAddBook(data: AddBookSchema) {
       try {
-        const result = await registerAccount(data);
+        const result = await AddBookPage(data);
         toast({
           description: result.message,
         });
-        // navigate("/login");
+        navigate("/add-books");
       } catch (error: any) {
         toast({
           title: "Oops! Something went wrong.",
@@ -53,7 +48,7 @@ const RegisterPage: React.FC = () => {
         <div className="flex flex-col justify-center font-roboto h-screen">
           <div className="w-full max-w-xs mx-auto">
             <h1 className="text-3xl mb-2 font-roboto font-bold" style={{ color: '#0A4D68' }}>Register</h1>
-            <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(onSubmitRegister)}>
+            <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(onAddBook)}>
 
             <CostomFormField control={form.control} name="full_name" label="Full Name">
               {(field) => (
@@ -147,4 +142,4 @@ const RegisterPage: React.FC = () => {
   );  
 };
 
-export default RegisterPage;
+export default AddBookPage;

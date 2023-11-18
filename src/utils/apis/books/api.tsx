@@ -28,7 +28,7 @@ export const postAddBook = async (id_book: string) => {
         const response = await axiosWithConfig.post
         (`https://hells-kitchen.onrender.com/api/v1/books/${id_book}`)
         
-        return response.data as Response<Book>;
+        return response.data as Response<AddBookSchema>;
     } catch (error: any) {
         throw Error(error.response.data.message)
     }
@@ -39,7 +39,7 @@ export const putEditBook = async (id_book: string) => {
         const response = await axiosWithConfig.put
         (`https://hells-kitchen.onrender.com/api/v1/books/${id_book}`)
         
-        return response.data as Response<Book>;
+        return response.data as Response<EditBookSchema>;
     } catch (error: any) {
         throw Error(error.response.data.message)
     }

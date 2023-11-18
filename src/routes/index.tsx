@@ -9,6 +9,7 @@ import DetailBook from "@/pages/books/details";
 import EditProfilePage from "@/pages/profile/edit-profile";
 import HistoryBorrowPage from "@/pages/profile/history-borrow";
 import ProfilePage from "@/pages/profile/profile-page";
+import AddBookPage from "@/pages/admin/add-book";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -50,6 +51,10 @@ export default function Router() {
         {
           path: "/profile-page",
           element: <ProfilePage />,
+        },
+        {
+          path: "/add-book",
+          element: <AddBookPage />,
         },
         {
           path: "*",

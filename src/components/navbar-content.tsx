@@ -35,6 +35,7 @@ const NavbarContent: React.FC = () => {
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem> 
             <DropdownMenuItem asChild><Link to="/history-borrow">History Borrow</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link to="/add-book">Add Book</Link></DropdownMenuItem>
             <DropdownMenuItem asChild><Link to="/">Logout</Link></DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

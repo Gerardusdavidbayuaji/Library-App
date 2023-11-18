@@ -3,27 +3,27 @@ import * as z from "zod";
 export const loginSchema = z.object ({
   email: z
   .string()
-  .min(1, {message: "email is requaired"})
+  .min(1, {message: "Email is requaired"})
   .email("not valid email"),
   password: z
   .string()
-  .min(6, {message: "password is requaired"})
+  .min(6, {message: "Password is requaired"})
 });
 
 export const registerSchema = z.object ({
   full_name: z
   .string()
-  .min(1, {message: "full name is requaired"}),
+  .min(1, {message: "Full name is requaired"}),
   email: z
   .string()
-  .min(1, {message: "email is requaired"})
-  .email("not valid email"),
+  .min(1, {message: "Email is requaired"})
+  .email("Not valid email"),
   password: z
   .string()
-  .min(6, {message: "password is requaired"}),
+  .min(6, {message: "Password is requaired"}),
   repassword: z
   .string()
-  .min(6, {message: "retype password is requaired"}),
+  .min(6, {message: "Retype password is requaired"}),
   role: z
   .string()
   .default("user"),
