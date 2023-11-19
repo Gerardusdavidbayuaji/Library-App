@@ -1,15 +1,18 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Loader2 } from "lucide-react";
 
 import { CostomFormField } from "@/components/costom-formfield";
+import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form } from "@/components/ui/form";
 
+
 import { addBookSchema, AddBookSchema } from "@/utils/apis/books";
+import CostomSelect from "@/components/costom-select";
 
 const AddBookPage: React.FC = () => {
 
@@ -30,10 +33,14 @@ const AddBookPage: React.FC = () => {
     async function onAddBook(data: AddBookSchema) {
       try {
         const result = await AddBookPage(data);
-        toast({
-          description: result.message,
-        });
-        navigate("/add-books");
+        if (result) {
+          toast({
+            description: result.toString(),
+          });
+          navigate("/add-books");
+        } else {
+          throw new Error("Unexpected result value");
+        }
       } catch (error: any) {
         toast({
           title: "Oops! Something went wrong.",
@@ -42,89 +49,82 @@ const AddBookPage: React.FC = () => {
         });
       }
     }
+    
 
     return (
       <Form {...form}>
         <div className="flex flex-col justify-center font-roboto h-screen">
           <div className="w-full max-w-xs mx-auto">
-            <h1 className="text-3xl mb-2 font-roboto font-bold" style={{ color: '#0A4D68' }}>Register</h1>
+            <h1 className="text-3xl mb-2 font-roboto font-bold" style={{ color: '#0A4D68' }}>Add a Book</h1>
             <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(onAddBook)}>
 
-            <CostomFormField control={form.control} name="full_name" label="Full Name">
+            <CostomFormField control={form.control} name="title" label="Title">
               {(field) => (
               <Input
               {...field}
-              placeholder="Enter your full name"
+              placeholder="Title book"
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}
               />
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="email" label="Email">
+            <CostomFormField control={form.control} name="cover_image" label="Cover Image">
               {(field) => (
               <Input
               {...field}
-              placeholder="Enter your email"
-              type="email"
+              placeholder="no file selected"
+              type="file"
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}
               />
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="password" label="Password">
+            <CostomFormField control={form.control} name="author" label="Author">
               {(field) => (
               <Input
               {...field}
-              placeholder="Enter your password"
-              type="password"
+              placeholder="Author"
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}
               />
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="repassword" label="Retype Password">
+            <CostomFormField control={form.control} name="isbn" label="ISBN">
               {(field) => (
               <Input
               {...field}
-              placeholder="Enter your password"
-              type="password"
+              placeholder="ISBN"
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}
               />
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="address" label="Address">
+            <CostomFormField control={form.control} name="category" label="Category">
               {(field) => (
-              <Input
+              <CostomSelect
+              />
+              )}
+            </CostomFormField>
+
+            <CostomFormField control={form.control} name="description" label="Description">
+              {(field) => (
+              <Textarea
               {...field}
-              placeholder="Enter your address"
+              placeholder="Description"
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}
               />
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="phone_number" label="Phone Number">
-              {(field) => (
-              <Input
-              {...field}
-              placeholder="Enter your phone number"
-              type="tel"
-              disabled={form.formState.isSubmitting}
-              aria-disabled={form.formState.isSubmitting}
-              />
-              )}
-            </CostomFormField>
-            <div className="flex">
-              <div>
-                <h3 className="text-sm pr-8" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
-                <Link to="/login" className="text-sm" style={{ color: '#05BFDB'}}>Login instead</Link>
-              </div>
-              <Button className="px-auto ml-12 float-right border rounded-full" type="submit"
+            <div className="flex justify-end">
+              <Button className="flex px-auto w-24 rounded-lg object-right"
+              style={{ background: '#0A263E' }}
+              type="submit"
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? (
@@ -132,7 +132,7 @@ const AddBookPage: React.FC = () => {
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
                 </>
                 ) : (
-                  "Register"
+                  "Add"
                   )}</Button>
             </div>
             </form>
