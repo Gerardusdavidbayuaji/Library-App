@@ -13,6 +13,8 @@ import ProfilePage from '@/pages/profile/profile-page';
 import HistoryBorrowPage from '@/pages/profile/history-borrow';
 import HomeLayout from './home-layout';
 import ContentLayout from './content-layout';
+import AddBookPage from '@/pages/admin/add-book';
+import EditBookPage from '@/pages/admin/edit-book';
 
 
 const NavbarContent: React.FC = () => {
@@ -36,6 +38,7 @@ const NavbarContent: React.FC = () => {
             <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem> 
             <DropdownMenuItem asChild><Link to="/history-borrow">History Borrow</Link></DropdownMenuItem>
             <DropdownMenuItem asChild><Link to="/add-book">Add Book</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link to="/edit-book">Edit Book</Link></DropdownMenuItem>
             <DropdownMenuItem asChild><Link to="/">Logout</Link></DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

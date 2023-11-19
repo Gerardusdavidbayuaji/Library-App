@@ -37,6 +37,9 @@ export const editbookSchemaa = z.object ({
   description: z
   .string()
   .min(6, {message: "Description is requaired"}),
+  cover_image: z
+  .string()
+  .min(6, {message: "No file selected"}),
 });
 
 export const book = z.object ({
