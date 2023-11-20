@@ -6,7 +6,7 @@ import LoginPage from '@/pages/auth/login';
 
 const HomeLayout: React.FC = () => {
   return (
-    <div className='w-full h-screen bg-white font-roboto flex flex-col overflow-scroll'>
+    <div className='w-full h-screen bg-white dark:bg-black font-roboto flex flex-col overflow-scroll'>
         <NavbarHome/>
         <div className="container grow mx-auto py-10 px-10 flex">
           <div className="w-1/2 flex flex-col justify-center">

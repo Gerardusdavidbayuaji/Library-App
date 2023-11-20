@@ -38,7 +38,7 @@ const RegisterPage: React.FC = () => {
         toast({
           description: result.message,
         });
-        // navigate("/login");
+        navigate("/login");
       } catch (error: any) {
         toast({
           title: "Oops! Something went wrong.",

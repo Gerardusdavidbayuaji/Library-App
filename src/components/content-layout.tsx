@@ -38,7 +38,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children }) => {
   }
 
   return (
-    <div className='w-full h-screen bg-white font-roboto flex flex-col overflow-scroll'>
+    <div className='w-full h-screen bg-white dark:bg-black font-roboto flex flex-col overflow-auto'>
       <NavbarContent/>
       <div className="container py-10 mx-auto">
         <div className='flex justify-center items-center gap-11 text-white rounded-3xl mx-auto' style={{ background: "#0A4D68"}}>
@@ -65,9 +65,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children }) => {
         ))}
         </div>
       </div>
-        <div>
         <FooterContent/>
-        </div>
     </div>
   );
 };

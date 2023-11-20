@@ -26,7 +26,7 @@ export const profileUpdateSchema = z.object({
     ),
 });
 
-export type ProfileUpdateType = z.infer<typeof profileUpdateSchema>;
+export type ProfileUpdateSchema = z.infer<typeof profileUpdateSchema>;
 
 export interface Profile {
     id: number;
