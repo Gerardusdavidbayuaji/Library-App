@@ -10,8 +10,10 @@ import { Input } from "@/components/ui/input";
 import { Form } from "@/components/ui/form";
 
 import { loginAccount, loginSchema, LoginSchema } from "@/utils/apis/auth";
+import { useToken } from "@/utils/contexts/token";
 
 const Login = () => {
+  const {changeToken} = useToken();
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -26,7 +28,7 @@ const Login = () => {
   async function handleLogin(data: LoginSchema) {
     try {
       const result = await loginAccount(data);
-      localStorage.setItem("token", result.payload.token);
+      changeToken(result.payload.token);
       toast({
         description: result.message,
       });

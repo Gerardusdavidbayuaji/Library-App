@@ -7,17 +7,28 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Link } from 'react-router-dom';
-import ProfilePage from '@/pages/profile/profile-page';
-import HistoryBorrowPage from '@/pages/profile/history-borrow';
-import HomeLayout from './home-layout';
-import ContentLayout from './content-layout';
-import AddBookPage from '@/pages/admin/add-book';
-import EditBookPage from '@/pages/admin/edit-book';
 
+import useTheme from '@/utils/hooks/useTheme';
+import { useToken } from '@/utils/contexts/token';
+import { useToast } from './ui/use-toast';
 
 const NavbarContent: React.FC = () => {
+
+  const {token, user , changeToken } = useToken();
+  const [toggleTheme] = useTheme();
+  const { toast } = useToast();
+
+  function handleLogout() {
+    changeToken()
+    toast ({
+      description: "logout succesfully"
+    })
+  }
+
   return (
     <header className='w-full sticky top-0' style={{ backgroundColor: '#05BFDB' }}>
       <div className='grid-cols flex container items-center justify-between py-5 px-20'>
@@ -28,18 +39,28 @@ const NavbarContent: React.FC = () => {
         <DropdownMenu>
           <DropdownMenuTrigger>
           <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src={user.profile_picture} alt={user.full_name} />
+          <AvatarFallback>LA</AvatarFallback>
         </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-44" align="end">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            {token && (
+              <>
+              <DropdownMenuLabel>Hi, {user.full_name}</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/history-borrow">History Borrow</Link></DropdownMenuItem>
+              </>
+            )}
+            <DropdownMenuItem onClick={() => toggleTheme()}>
+              Change Theme
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem> 
-            <DropdownMenuItem asChild><Link to="/history-borrow">History Borrow</Link></DropdownMenuItem>
-            <DropdownMenuItem asChild><Link to="/add-book">Add Book</Link></DropdownMenuItem>
-            <DropdownMenuItem asChild><Link to="/edit-book">Edit Book</Link></DropdownMenuItem>
-            <DropdownMenuItem asChild><Link to="/">Logout</Link></DropdownMenuItem>
+            {token ? <DropdownMenuItem onClick={() => handleLogout()}>Logout</DropdownMenuItem> : 
+            <>
+            <DropdownMenuItem asChild><Link to="/login">login</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link to="/register">Register</Link></DropdownMenuItem>
+            </>}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
