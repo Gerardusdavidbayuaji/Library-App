@@ -79,9 +79,7 @@ const EditProfile = () => {
   }
 
   return (
-  <div className="w-full h-screen bg-white dark:bg-black font-roboto flex flex-col overflow-auto">
-    <NavbarContent/>
-      <div className="container grow mx-auto flex flex-col items-center justify-center">
+    <div>
         <Form {...form}>
           <div className="flex flex-col justify-center font-roboto h-screen">
             <div className="mx-auto">
@@ -177,9 +175,7 @@ const EditProfile = () => {
               </div>
             </div>
           </Form>
-        </div>
-      <FooterContent/>
-  </div>
+       </div>
   );
 };
 
