@@ -12,7 +12,7 @@ import { Form } from "@/components/ui/form";
 import { loginAccount, loginSchema, LoginSchema } from "@/utils/apis/auth";
 import { useToken } from "@/utils/contexts/token";
 
-const Login = () => {
+const LoginPage = () => {
   const {changeToken} = useToken();
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -44,11 +44,8 @@ const Login = () => {
 
   return (
     <Form {...form}>
-      <div className="flex flex-col justify-center font-roboto h-screen">
+      <div className="flex flex-col justify-center font-roboto">
         <div className="w-full max-w-xs mx-auto">
-          <h1 className="text-3xl mb-2 font-roboto font-bold" style={{ color: '#0A4D68' }}>Login</h1>
-          <h2 className="mb-5" style={{ color: '#0A4D68' }}> Walcome, please enter your details</h2>
-
           <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(handleLogin)}>
             <h3 className="block text-sm font-bold" style={{ color: '#05BFDB' }}>Email</h3>
             <CostomFormField control={form.control} name="email" label="Email">
@@ -75,13 +72,12 @@ const Login = () => {
               />
               )}
             </CostomFormField>
-            <div className="flex">
+            <div className="flex flex-row space-x-16">
                 <div>
-                    <h3 className="text-sm pr-10" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
-                    <Link to="/register" className="text-sm" style={{ color: '#05BFDB'}}>Register here</Link>
+                    <h3 className="text-sm" style={{ color: '#0A4D68' }}>Don't have an account? Register instead</h3>
                 </div>
               <Button 
-              className="px-auto float-right border rounded-full ml-12" style={{background: "#0A4D68"}}
+              className="px-auto border rounded-lg" style={{background: "#0A4D68"}}
               type="submit"
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}>
@@ -100,4 +96,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

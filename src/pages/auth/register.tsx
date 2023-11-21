@@ -50,9 +50,8 @@ const RegisterPage: React.FC = () => {
 
     return (
       <Form {...form}>
-        <div className="flex flex-col justify-center font-roboto h-screen">
+        <div className="flex flex-col justify-center font-roboto">
           <div className="w-full max-w-xs mx-auto">
-            <h1 className="text-3xl mb-2 font-roboto font-bold" style={{ color: '#0A4D68' }}>Register</h1>
             <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(onSubmitRegister)}>
 
             <CostomFormField control={form.control} name="full_name" label="Full Name">
@@ -124,12 +123,11 @@ const RegisterPage: React.FC = () => {
               />
               )}
             </CostomFormField>
-            <div className="flex">
+            <div className="flex flex-row space-x-16">
               <div>
-                <h3 className="text-sm pr-8" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
-                <Link to="/login" className="text-sm" style={{ color: '#05BFDB'}}>Login instead</Link>
+                <h3 className="text-sm" style={{ color: '#0A4D68' }}>Already have an account?<br />Login instead</h3>
               </div>
-              <Button className="px-auto ml-12 float-right border rounded-full" type="submit"
+              <Button className="px-auto border rounded-lg" type="submit" style={{background: "#0A4D68"}}
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? (

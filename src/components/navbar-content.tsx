@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+import HomeLayout from './home-layout';
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Link } from 'react-router-dom';
@@ -58,8 +59,8 @@ const NavbarContent: React.FC = () => {
             <DropdownMenuSeparator />
             {token ? <DropdownMenuItem onClick={() => handleLogout()}>Logout</DropdownMenuItem> : 
             <>
-            <DropdownMenuItem asChild><Link to="/login">login</Link></DropdownMenuItem>
-            <DropdownMenuItem asChild><Link to="/register">Register</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link to="/">login</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link to="/">Register</Link></DropdownMenuItem>
             </>}
           </DropdownMenuContent>
         </DropdownMenu>
