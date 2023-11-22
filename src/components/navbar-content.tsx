@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ShoppingCartIcon } from 'lucide-react'; 
 
 import useTheme from '@/utils/hooks/useTheme';
 import { useToken } from '@/utils/contexts/token';
@@ -20,6 +21,7 @@ const NavbarContent: React.FC = () => {
   const {token, user , changeToken } = useToken();
   const [toggleTheme] = useTheme();
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   function handleLogout() {
     changeToken()
@@ -35,6 +37,7 @@ const NavbarContent: React.FC = () => {
         <div className='flex items-center justify-between gap-10 text-lg font-medium font-roboto text-white'>
         <Link to="/">Home</Link>
         <Link to="/content-layout">List of Books</Link>
+        {token && user.role === "user" &&(<ShoppingCartIcon onClick={() => navigate("/profile-page")}/>)}
         <DropdownMenu>
           <DropdownMenuTrigger>
           <Avatar>

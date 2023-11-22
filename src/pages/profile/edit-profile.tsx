@@ -12,8 +12,6 @@ import { deleteProfile, getProfile, updateProfile } from "@/utils/apis/user";
 import { ProfileUpdateSchema } from "@/utils/apis/user";
 import { profileUpdateSchema } from "@/utils/apis/user/types";
 import { CostomFormField } from "@/components/costom-formfield";
-import NavbarContent from "@/components/navbar-content";
-import FooterContent from "@/components/footer-content";
 
 const EditProfile = () => {
   const { toast } = useToast();
@@ -79,14 +77,13 @@ const EditProfile = () => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col justify-center font-roboto">
         <Form {...form}>
-          <div className="flex flex-col justify-center font-roboto h-screen">
-            <div className="mx-auto">
               <form
-              className="flex flex-col gap-4 items-center"
+              className="flex flex-col gap-4 items-center py-5"
               onSubmit={form.handleSubmit(handleUpdateProfile)}
               >
+                <div className="mx-auto">
                 <CostomFormField control={form.control} name="full_name" label="Full Name">
                   {(field) => (
                   <Input
@@ -159,23 +156,29 @@ const EditProfile = () => {
                   />
                 )}
                 </CostomFormField>
-                <Button 
-                type="submit"
-                className="flex px-auto w-24 rounded-lg object-right"
-                >Submit</Button>
-                
-                <Alert
-                title="Are you absolutely sure?"
-                description="This action cannot be undone. This will permanently delete your account an you cannot use your email again."
-                onAction={() => handleDeleteProfile()}
-                >
-                  <Button type="button" variant="destructive">Delete Account</Button>
-                </Alert>
-                </form>
-              </div>
-            </div>
-          </Form>
-       </div>
+                </div>
+                <div className="flex gap-2">
+                  <Button
+                  type="submit"
+                  className="flex w-24 rounded-lg object-right"
+                  style={{background: "#0A4D68"}}
+                  >Submit</Button>
+                  
+                  <Alert
+                  title="Are you absolutely sure?"
+                  description="This action cannot be undone. This will permanently delete your account an you cannot use your email again."
+                  onAction={() => handleDeleteProfile()}
+                  >
+                    <Button
+                    type="button" 
+                    variant="destructive"
+                    className="flex w-auto rounded-lg object-right"
+                    >Delete Account</Button>
+                    </Alert>
+                </div>
+              </form>
+        </Form>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ const ProfileUser = () => {
 
   return (
     <div className="grid justify-center mx-auto py-5">
-      <figure className="w-60 h-60 mb-5">
+      <figure className="w-52 h-52 mb-5">
           <img
             className="aspect-square rounded-full object-cover"
             src={profile?.profile_picture}

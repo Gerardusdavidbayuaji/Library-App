@@ -21,7 +21,7 @@ export function AuthLayout() {
     <Tabs defaultValue="login" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="login" style={{ color: '#0A4D68' }}>Login</TabsTrigger>
-        <TabsTrigger value="password" style={{ color: '#0A4D68' }}>Registrasi</TabsTrigger>
+        <TabsTrigger value="password" style={{ color: '#0A4D68' }}>Registration</TabsTrigger>
       </TabsList>
 
       {/* Start Login */}
@@ -44,7 +44,7 @@ export function AuthLayout() {
       <TabsContent value="password">
         <Card>
           <CardHeader>
-            <CardTitle style={{ color: '#0A4D68' }}>Registrasi</CardTitle>
+            <CardTitle style={{ color: '#0A4D68' }}>Registration</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Loader2 } from "lucide-react";
@@ -32,7 +32,7 @@ const LoginPage = () => {
       toast({
         description: result.message,
       });
-      navigate("/");
+      navigate("/content-layout");
     } catch (error: any) {
       toast({
         title: "Oops! Something went wrong.",
@@ -77,10 +77,12 @@ const LoginPage = () => {
                     <h3 className="text-sm" style={{ color: '#0A4D68' }}>Don't have an account? Register instead</h3>
                 </div>
               <Button 
-              className="px-auto border rounded-lg" style={{background: "#0A4D68"}}
+              className="px-auto border rounded-lg" 
+              style={{background: "#0A4D68"}}
               type="submit"
               disabled={form.formState.isSubmitting}
-              aria-disabled={form.formState.isSubmitting}>
+              aria-disabled={form.formState.isSubmitting}
+              >
                 {form.formState.isSubmitting ? (
                 <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait

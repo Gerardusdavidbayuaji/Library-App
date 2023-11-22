@@ -7,7 +7,6 @@ import LoginPage from "@/pages/auth/login";
 import RegisterPage from "@/pages/auth/register";
 import DetailBook from "@/pages/books/details";
 import EditProfilePage from "@/pages/profile/edit-profile";
-import HistoryBorrowPage from "@/pages/profile/history-borrow";
 import AddBookPage from "@/pages/admin/add-book";
 import EditBookPage from "@/pages/admin/edit-book";
 import ProfilePage from "@/pages/profile/profile-page";
@@ -45,10 +44,6 @@ export default function Router() {
         {
           path: "/edit-profile",
           element: <EditProfilePage />,
-        },
-        {
-          path: "/history-borrow",
-          element: <HistoryBorrowPage />,
         },
         {
           path: "/profile-page",

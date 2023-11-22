@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ContentLayout from './content-layout';
 
 const NavbarHome: React.FC = () => {
   return (
