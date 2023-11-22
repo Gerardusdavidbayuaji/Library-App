@@ -5,7 +5,7 @@ import axiosWithConfig from "../axioswithconfig";
 export const getBooks = async () => {
     try {
         const response = await axiosWithConfig.get
-        ('https://hells-kitchen.onrender.com/api/v1/books')
+        ('/books')
         return response.data as Response<PayloadPagination<Book[]>>;
     } catch (error: any) {
         throw Error(error.response.data.message)
@@ -15,7 +15,7 @@ export const getBooks = async () => {
 export const getDetailBook = async (id_book: string) => {
     try {
         const response = await axiosWithConfig.get
-        (`https://hells-kitchen.onrender.com/api/v1/books/${id_book}`)
+        (`/books/${id_book}`)
         
         return response.data as Response<Book>;
     } catch (error: any) {
@@ -26,7 +26,7 @@ export const getDetailBook = async (id_book: string) => {
 export const postAddBook = async (id_book: string) => {
     try {
         const response = await axiosWithConfig.post
-        (`https://hells-kitchen.onrender.com/api/v1/books/${id_book}`)
+        (`/books/${id_book}`)
         
         return response.data as Response<AddBookSchema>;
     } catch (error: any) {
@@ -37,7 +37,7 @@ export const postAddBook = async (id_book: string) => {
 export const putEditBook = async (id_book: string) => {
     try {
         const response = await axiosWithConfig.put
-        (`https://hells-kitchen.onrender.com/api/v1/books/${id_book}`)
+        (`/books/${id_book}`)
         
         return response.data as Response<EditBookSchema>;
     } catch (error: any) {

@@ -19,26 +19,24 @@ import { Button } from "@/components/ui/button";
 
 const ProfilePage = () => {
 
-  const { cart, deleteBook } = useCartStore();
+  const { cart, deleteBook, removeCart } = useCartStore();
 
   return (
-    <div className="w-full h-screen bg-white dark:bg-black font-roboto flex flex-col overflow-scroll">
+    <div className="w-full h-screen bg-white dark:bg-black dark:decoration-orange-400 font-roboto flex flex-col overflow-scroll">
       <NavbarContent />
-      <div className="container grow mx-auto py-10 px-10 flex">
+      <div className="container grow mx-auto py-10 px-10 flex gap-5">
         <div className="w-2/5 flex justify-center place-items-center">
-          <Tabs defaultValue="login w-full">
+          <Tabs defaultValue="login" className="w-full h-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger
                 value="login"
                 className="text-lg"
-                style={{ color: "#0A4D68" }}
               >
                 Profile
               </TabsTrigger>
               <TabsTrigger
                 value="password"
                 className="text-lg"
-                style={{ color: "#0A4D68" }}
               >
                 Edit Profile
               </TabsTrigger>
@@ -72,7 +70,7 @@ const ProfilePage = () => {
 
         {/* start my book */}
         <div className="w-3/5 justify-center place-items-center border rounded-lg">
-          <p className="text-center text-lg py-2 font-medium" style={{ color: "#0A4D68" }}>
+          <p className="text-center text-lg py-2 font-medium">
             My book
           </p>
           <Separator />
@@ -84,16 +82,25 @@ const ProfilePage = () => {
                 src={book.cover_image}
                 alt={book.title}
               />
-              <p className="text-sm my-2 text-justify">{book.title}</p>
+              <p className="text-sm my-2 text-center">{book.title}</p>
               <Button 
               variant="destructive" 
               onClick={() => deleteBook(book)}
-              className="flex my-2 ml-auto"
+              className="flex m-auto"
               >
                 Return
               </Button>
             </div>
           ))}
+          </div>
+          <div>
+          <Button
+          variant="destructive"
+          onClick={() => removeCart()}
+          className="mx-auto flex mt-36 justify-items-end"
+          >
+            Remove All Books
+          </Button>
           </div>
         </div>
         {/* end my book */}

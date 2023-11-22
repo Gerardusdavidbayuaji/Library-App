@@ -27,7 +27,7 @@ const ProfileUser = () => {
   }
 
   return (
-    <div className="grid justify-center mx-auto py-5">
+    <div className="grid justify-center mx-auto py-20">
       <figure className="w-52 h-52 mb-5">
           <img
             className="aspect-square rounded-full object-cover"

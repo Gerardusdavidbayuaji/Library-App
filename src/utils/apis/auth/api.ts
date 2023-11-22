@@ -5,7 +5,7 @@ import { LoginSchema, RegisterSchema } from ".";
 export const loginAccount = async (body: LoginSchema) => {
   try {
     const response = await axiosWithConfig.post(
-      "https://hells-kitchen.onrender.com/api/v1/login",
+      "/login",
       body
     );
 
@@ -18,7 +18,7 @@ export const loginAccount = async (body: LoginSchema) => {
 export const registerAccount = async (body: RegisterSchema) => {
   try {
     const response = await axiosWithConfig.post(
-      "https://hells-kitchen.onrender.com/api/v1/register",
+      "/register",
       body
     );
 

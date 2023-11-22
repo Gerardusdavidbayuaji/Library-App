@@ -5,7 +5,7 @@ import { Profile, ProfilePayload } from ".";
 export const getProfile = async () => {
   try {
     const response = await axiosWithConfig.get(
-      "https://hells-kitchen.onrender.com/api/v1/users"
+      "/users"
     );
 
     return response.data as Response<Profile>;
@@ -17,7 +17,7 @@ export const getProfile = async () => {
 export const updateProfile = async (body: ProfilePayload) => {
   try {
     const response = await axiosWithConfig.put(
-      "https://hells-kitchen.onrender.com/api/v1/users",
+      "/users",
       body
     );
 
@@ -30,7 +30,7 @@ export const updateProfile = async (body: ProfilePayload) => {
 export const deleteProfile = async () => {
   try {
     const response = await axiosWithConfig.delete(
-      "https://hells-kitchen.onrender.com/api/v1/users"
+      "/users"
     );
 
     return response.data as Response;

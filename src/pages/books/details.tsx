@@ -43,7 +43,14 @@ const DetailBook = () => {
     }
   }
 
-  function onClickBorrow() {
+  async function onClickBorrow() {
+    const body = {
+      bookId: cart.map((item) => item.id),
+      borrow_date: new Date().toISOString(),
+    }
+
+    console.log(body);
+    
     toast({
       description: "Book has been added to cart.",
     });

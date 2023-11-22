@@ -14,7 +14,7 @@ interface ContentLayoutProps {
   children?: ReactNode;
 }
 
-const ContentLayout: React.FC<ContentLayoutProps> = ({ children }) => {
+const ContentLayout: React.FC<ContentLayoutProps> = ({}) => {
 
   const { toast } = useToast();
   const [books, setBooks] = useState<Book[]>([]);
