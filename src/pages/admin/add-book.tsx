@@ -103,12 +103,7 @@ const AddBookPage: React.FC = () => {
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="category" label="Category">
-              {(field) => (
-              <CostomSelect
-              />
-              )}
-            </CostomFormField>
+            <CostomSelect/>
 
             <CostomFormField control={form.control} name="description" label="Description">
               {(field) => (
