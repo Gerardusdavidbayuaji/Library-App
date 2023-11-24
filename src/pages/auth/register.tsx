@@ -52,9 +52,9 @@ const RegisterPage: React.FC = () => {
       <Form {...form}>
         <div className="flex flex-col justify-center font-roboto">
           <div className="w-full max-w-xs mx-auto">
-            <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(onSubmitRegister)}>
-
-            <CostomFormField control={form.control} name="full_name" label="Full Name">
+            <form className="flex flex-col" onSubmit={form.handleSubmit(onSubmitRegister)}>
+            <h3 className="text-sm font-bold" style={{ color: '#05BFDB' }}>Full Name</h3>
+            <CostomFormField control={form.control} name="full_name" label="">
               {(field) => (
               <Input
               {...field}
@@ -65,7 +65,8 @@ const RegisterPage: React.FC = () => {
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="email" label="Email">
+            <h3 className="text-sm font-bold mt-3" style={{ color: '#05BFDB' }}>Email</h3>
+            <CostomFormField control={form.control} name="email" label="">
               {(field) => (
               <Input
               {...field}
@@ -77,7 +78,8 @@ const RegisterPage: React.FC = () => {
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="password" label="Password">
+            <h3 className="text-sm font-bold mt-3" style={{ color: '#05BFDB' }}>Password</h3>
+            <CostomFormField control={form.control} name="password" label="">
               {(field) => (
               <Input
               {...field}
@@ -89,7 +91,8 @@ const RegisterPage: React.FC = () => {
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="repassword" label="Retype Password">
+            <h3 className="text-sm font-bold mt-3" style={{ color: '#05BFDB' }}>Retype Password</h3>
+            <CostomFormField control={form.control} name="repassword" label="">
               {(field) => (
               <Input
               {...field}
@@ -101,7 +104,8 @@ const RegisterPage: React.FC = () => {
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="address" label="Address">
+            <h3 className="text-sm font-bold mt-3" style={{ color: '#05BFDB' }}>Address</h3>
+            <CostomFormField control={form.control} name="address" label="">
               {(field) => (
               <Input
               {...field}
@@ -112,7 +116,8 @@ const RegisterPage: React.FC = () => {
               )}
             </CostomFormField>
 
-            <CostomFormField control={form.control} name="phone_number" label="Phone Number">
+            <h3 className="text-sm font-bold mt-3" style={{ color: '#05BFDB' }}>Phone Number</h3>
+            <CostomFormField control={form.control} name="phone_number" label="">
               {(field) => (
               <Input
               {...field}
@@ -123,7 +128,7 @@ const RegisterPage: React.FC = () => {
               />
               )}
             </CostomFormField>
-            <div className="flex justify-between">
+            <div className="flex justify-between mt-3">
               <div>
                 <h3 className="text-sm" style={{ color: '#0A4D68' }}>Already have an account?</h3>
                 <h3 className="text-sm" style={{ color: '#0A4D68' }}>Login instead</h3>

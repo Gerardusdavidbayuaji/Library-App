@@ -46,8 +46,8 @@ const LoginPage = () => {
     <Form {...form}>
       <div className="flex flex-col justify-center font-roboto">
         <div className="w-full max-w-xs mx-auto">
-          <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(handleLogin)}>
-            <h3 className="block text-sm font-bold" style={{ color: '#05BFDB' }}>Email</h3>
+          <form className="flex flex-col" onSubmit={form.handleSubmit(handleLogin)}>
+            <h3 className="text-sm font-bold mt-3" style={{ color: '#05BFDB' }}>Email</h3>
             <CostomFormField control={form.control} name="email" label="">
               {(field) => (
               <Input
@@ -60,7 +60,7 @@ const LoginPage = () => {
               )}
             </CostomFormField>
 
-            <h3 className="block text-sm font-bold" style={{ color: '#05BFDB' }}>Password</h3>
+            <h3 className="text-sm font-bold mt-3" style={{ color: '#05BFDB' }}>Password</h3>
             <CostomFormField control={form.control} name="password" label="">
               {(field) => (
               <Input
@@ -72,7 +72,7 @@ const LoginPage = () => {
               />
               )}
             </CostomFormField>
-            <div className="flex justify-between">
+            <div className="flex justify-between mt-3">
                 <div>
                     <h3 className="text-sm" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
                     <h3 className="text-sm" style={{ color: '#0A4D68' }}>Register instead</h3>

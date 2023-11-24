@@ -51,8 +51,6 @@ const NavbarContent: React.FC = () => {
               <DropdownMenuLabel>Hi, {user.full_name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem>
-              <DropdownMenuItem asChild><Link to="/edit-profile-admin">Edit Profile admin</Link></DropdownMenuItem>
-              <DropdownMenuItem asChild><Link to="/profile-admin">Profile admin</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/profile-page-admin">Profile page admin</Link></DropdownMenuItem>
               </>
             )}

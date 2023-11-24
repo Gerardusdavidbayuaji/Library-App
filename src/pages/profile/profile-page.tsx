@@ -22,12 +22,13 @@ const ProfilePage = () => {
   const { cart, deleteBook, removeCart } = useCartStore();
 
   return (
-    <div className="w-full h-screen bg-white dark:bg-black dark:decoration-orange-400 font-roboto flex flex-col overflow-scroll">
+    <div className="w-full h-screen bg-white dark:bg-black font-roboto flex flex-col overflow-scroll">
       <NavbarContent />
-      <div className="container grow mx-auto py-10 px-10 flex gap-5">
-        <div className="w-2/5 flex justify-center place-items-center">
+      <div className="container grow mx-auto">
+        <div className="grid grid-cols-12 mt-5 gap-2">
+          <div className="col-span-5 flex">
           <Tabs defaultValue="login" className="w-full h-full">
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="w-full">
               <TabsTrigger
                 value="login"
                 className="text-lg"
@@ -66,17 +67,18 @@ const ProfilePage = () => {
             </TabsContent>
             {/* End edit profile */}
           </Tabs>
-        </div>
-
-        {/* start my book */}
-        <div className="w-3/5 justify-center place-items-center border rounded-lg">
-          <p className="text-center text-lg py-2 font-medium">
-            My book
-          </p>
-          <Separator />
-          <div className="p-5 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center h-fit justify-between mx-auto">
-          {cart.map((book: Book) => (
-            <div className="items-center" key={book.id}>
+          </div>
+          
+          <div className="col-span-7 border rounded-lg flex flex-col h-full">
+            <div>
+              <p className="text-center text-lg py-2 font-medium">
+                My Book
+              </p>
+              <Separator />
+            </div>
+            <div className="p-5 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center h-fit justify-between mx-auto">
+              {cart.map((book: Book) => (
+              <div className="items-center" key={book.id}>
               <img
                 className="object-contain w-40"
                 src={book.cover_image}
@@ -87,23 +89,23 @@ const ProfilePage = () => {
               variant="destructive" 
               onClick={() => deleteBook(book)}
               className="flex m-auto"
+              style={{background: "#0A4D68"}}
               >
                 Return
               </Button>
             </div>
           ))}
           </div>
-          <div>
+          <div className="mt-auto self-end p-5">
           <Button
           variant="destructive"
           onClick={() => removeCart()}
-          className="mx-auto flex mt-36 justify-items-end"
           >
             Remove All Books
           </Button>
           </div>
+          </div>
         </div>
-        {/* end my book */}
       </div>
       <FooterContent />
     </div>

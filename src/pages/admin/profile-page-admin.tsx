@@ -15,12 +15,13 @@ import {
 
 const ProfilePageAdmin = () => {
     return (
-    <div className="w-full h-screen bg-white dark:bg-black dark:decoration-orange-400 font-roboto flex flex-col overflow-scroll">
+    <div className="w-full h-screen bg-white dark:bg-black font-roboto flex flex-col overflow-scroll">
       <NavbarContent />
-      <div className="container grow mx-auto py-10 px-10 flex gap-5">
-        <div className="w-2/5 flex justify-center place-items-center">
+      <div className="container grow mx-auto py-10 px-10 gap-5">
+        <div className="grid grid-cols-12 justify-center place-items-center">
+          <div className="col-span-12">
           <Tabs defaultValue="login" className="w-full h-full">
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="grid w-full grid-cols-4 text-center">
               <TabsTrigger
                 value="login"
                 className="text-lg"
@@ -34,7 +35,7 @@ const ProfilePageAdmin = () => {
                 Edit Profile
               </TabsTrigger>
             </TabsList>
-
+            
             {/* Start profile */}
             <TabsContent value="login">
               <Card>
@@ -59,6 +60,7 @@ const ProfilePageAdmin = () => {
             </TabsContent>
             {/* End edit profile */}
           </Tabs>
+          </div>
         </div>
       </div>
       <FooterContent />
