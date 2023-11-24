@@ -35,15 +35,15 @@ const NavbarContent: React.FC = () => {
       <div className='grid-cols flex container items-center justify-between py-3 px-8'>
         <Link to="/" className='text-3xl font-medium font-roboto text-white tracking-widest'>Library App</Link>
         <div className='flex items-center justify-between gap-10 text-lg font-medium font-roboto text-white'>
-        <Link to="/">Home</Link>
-        <Link to="/content-layout">List of Books</Link>
-        {token && user.role === "user" &&(<ShoppingCartIcon onClick={() => navigate("/profile-page")}/>)}
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-          <Avatar>
-          <AvatarImage src={user.profile_picture} alt={user.full_name} />
-          <AvatarFallback>LA</AvatarFallback>
-        </Avatar>
+          <Link to="/">Home</Link>
+          <Link to="/content-layout">List of Books</Link>
+          {token && user.role === "user" &&(<ShoppingCartIcon onClick={() => navigate("/profile-page")}/>)}
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+            <Avatar>
+              <AvatarImage src={user.profile_picture} alt={user.full_name} />
+              <AvatarFallback>LA</AvatarFallback>
+            </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-44" align="end">
             {token && (
@@ -51,16 +51,19 @@ const NavbarContent: React.FC = () => {
               <DropdownMenuLabel>Hi, {user.full_name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/edit-profile-admin">Edit Profile admin</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/profile-admin">Profile admin</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/profile-page-admin">Profile page admin</Link></DropdownMenuItem>
               </>
             )}
-            <DropdownMenuItem onClick={() => toggleTheme()}>
-              Change Theme
-            </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => toggleTheme()}>
+            Change Theme
+          </DropdownMenuItem>
             <DropdownMenuSeparator />
             {token ? <DropdownMenuItem onClick={() => handleLogout()}>Logout</DropdownMenuItem> : 
             <>
-            <DropdownMenuItem asChild><Link to="/">login</Link></DropdownMenuItem>
-            <DropdownMenuItem asChild><Link to="/">Register</Link></DropdownMenuItem>
+          <DropdownMenuItem asChild><Link to="/">login</Link></DropdownMenuItem>
+          <DropdownMenuItem asChild><Link to="/">Register</Link></DropdownMenuItem>
             </>}
           </DropdownMenuContent>
         </DropdownMenu>

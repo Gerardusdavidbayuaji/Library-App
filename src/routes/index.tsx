@@ -11,7 +11,9 @@ import AddBookPage from "@/pages/admin/add-book";
 import EditBookPage from "@/pages/admin/edit-book";
 import ProfilePage from "@/pages/profile/profile-page";
 import ProfileUser from "@/pages/profile/profile-user";
+import ProfileAdmin from "@/pages/admin/profile-admin";
 import EditProfileAdmin from "@/pages/admin/edit-profile-admin";
+import ProfilePageAdmin from "@/pages/admin/profile-page-admin";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -63,8 +65,16 @@ export default function Router() {
           element: <ProfileUser />,
         },
         {
+          path: "/profile-admin",
+          element: <ProfileAdmin />,
+        },
+        {
           path: "/edit-profile-admin",
           element: <EditProfileAdmin />,
+        },
+        {
+          path: "/profile-page-admin",
+          element: <ProfilePageAdmin />,
         },
         {
           path: "*",

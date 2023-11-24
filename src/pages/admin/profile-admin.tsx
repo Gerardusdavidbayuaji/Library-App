@@ -4,7 +4,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 import { Profile, getProfile } from "@/utils/apis/user";
 
-const ProfileUser = () => {
+const ProfileAdmin = () => {
   const { toast } = useToast();
 
   const [profile, setProfile] = useState<Profile>();
@@ -45,4 +45,4 @@ const ProfileUser = () => {
   );
 };
 
-export default ProfileUser;
+export default ProfileAdmin;
