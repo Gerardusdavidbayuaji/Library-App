@@ -30,7 +30,7 @@ export function AuthLayout() {
           <CardHeader>
             <CardTitle style={{ color: '#0A4D68' }}>Login</CardTitle>
             <CardDescription style={{ color: '#0A4D68' }}>
-            Walcome, please enter your details
+            Welcome, please enter your details
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">

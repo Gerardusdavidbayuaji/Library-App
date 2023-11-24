@@ -123,16 +123,17 @@ const RegisterPage: React.FC = () => {
               />
               )}
             </CostomFormField>
-            <div className="flex flex-row space-x-16">
+            <div className="flex justify-between">
               <div>
-                <h3 className="text-sm" style={{ color: '#0A4D68' }}>Already have an account?<br />Login instead</h3>
+                <h3 className="text-sm" style={{ color: '#0A4D68' }}>Already have an account?</h3>
+                <h3 className="text-sm" style={{ color: '#0A4D68' }}>Login instead</h3>
               </div>
               <Button className="px-auto border rounded-lg" type="submit" style={{background: "#0A4D68"}}
               disabled={form.formState.isSubmitting}
               aria-disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? (
                 <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 </>
                 ) : (
                   "Register"

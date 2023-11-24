@@ -74,7 +74,7 @@ const ProfilePage = () => {
             My book
           </p>
           <Separator />
-          <div className="p-5 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center h-fit">
+          <div className="p-5 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center h-fit justify-between mx-auto">
           {cart.map((book: Book) => (
             <div className="items-center" key={book.id}>
               <img

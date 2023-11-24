@@ -48,7 +48,7 @@ const LoginPage = () => {
         <div className="w-full max-w-xs mx-auto">
           <form className="flex flex-col gap-3" onSubmit={form.handleSubmit(handleLogin)}>
             <h3 className="block text-sm font-bold" style={{ color: '#05BFDB' }}>Email</h3>
-            <CostomFormField control={form.control} name="email" label="Email">
+            <CostomFormField control={form.control} name="email" label="">
               {(field) => (
               <Input
               {...field}
@@ -61,7 +61,7 @@ const LoginPage = () => {
             </CostomFormField>
 
             <h3 className="block text-sm font-bold" style={{ color: '#05BFDB' }}>Password</h3>
-            <CostomFormField control={form.control} name="password" label="Password">
+            <CostomFormField control={form.control} name="password" label="">
               {(field) => (
               <Input
               {...field}
@@ -72,9 +72,10 @@ const LoginPage = () => {
               />
               )}
             </CostomFormField>
-            <div className="flex flex-row space-x-16">
+            <div className="flex justify-between">
                 <div>
-                    <h3 className="text-sm" style={{ color: '#0A4D68' }}>Don't have an account? Register instead</h3>
+                    <h3 className="text-sm" style={{ color: '#0A4D68' }}>Don't have an account?</h3>
+                    <h3 className="text-sm" style={{ color: '#0A4D68' }}>Register instead</h3>
                 </div>
               <Button 
               className="px-auto border rounded-lg" 
@@ -85,7 +86,7 @@ const LoginPage = () => {
               >
                 {form.formState.isSubmitting ? (
                 <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 </>
                 ) : (
                   "Login"
