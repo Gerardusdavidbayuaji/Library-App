@@ -52,6 +52,7 @@ const NavbarContent: React.FC = () => {
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/profile-page-admin">Profile page admin</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/list-of-books">list of books</Link></DropdownMenuItem>
               </>
             )}
           <DropdownMenuItem onClick={() => toggleTheme()}>

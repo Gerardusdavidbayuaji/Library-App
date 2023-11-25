@@ -81,4 +81,24 @@ export const booksSampleData: Book[] = [
         description: "Gone Girl is a psychological thriller novel by Gillian Flynn, published in 2012. The story is about the mysterious disappearance of a woman named Amy and the subsequent media frenzy. The narrative alternates between the perspectives of the husband, Nick, and the missing wife, Amy, revealing the complexities of their relationship.",
         cover_image: "http://res.cloudinary.com/hypeotesa/image/upload/v1699408304/kitchen-sink/wwyu5bmyk6figjanwbhn.jpg",
     },
+    {
+        id: 9,
+        title: "The Great Gatsby",
+        featured: false,
+        author: "F. Scott Fitzgerald",
+        isbn: "978-0-7432-7356-5",
+        category: "Fiction",
+        description: "The Great Gatsby is a novel by F. Scott Fitzgerald published in 1925. It is set in the Roaring Twenties, focusing on the lives of Jay Gatsby and his love for the beautiful Daisy Buchanan. The novel explores themes of wealth, class, and the American Dream.",
+        cover_image: "http://res.cloudinary.com/hypeotesa/image/upload/v1699408359/kitchen-sink/u0swhmt3kruen9sdvqcm.jpg",
+    },
+    {
+        id: 10,
+        title: "Sapiens: A Brief History of Humankind",
+        featured: false,
+        author: "Yuval Noah Harari",
+        isbn: "978-0-06-231609-7",
+        category: "History",
+        description: "Sapiens: A Brief History of Humankind is a book by Yuval Noah Harari. It explores the history of the human species, from the emergence of Homo sapiens in Africa to the present day. The book delves into the impact of agriculture, empires, and science on the course of human history.",
+        cover_image: "http://res.cloudinary.com/hypeotesa/image/upload/v1699408454/kitchen-sink/xfjymxlkztflc37jz7er.jpg",
+    }
 ];

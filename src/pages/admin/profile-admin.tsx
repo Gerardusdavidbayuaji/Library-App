@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import { useToast } from "@/components/ui/use-toast";
-
 import { Profile, getProfile } from "@/utils/apis/user";
 
 const ProfileAdmin = () => {
