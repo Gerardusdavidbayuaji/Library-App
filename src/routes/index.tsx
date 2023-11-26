@@ -15,6 +15,8 @@ import ProfileAdmin from "@/pages/admin/profile-admin";
 import EditProfileAdmin from "@/pages/admin/edit-profile-admin";
 import ProfilePageAdmin from "@/pages/admin/profile-page-admin";
 import ListOfBook from "@/pages/admin/list-of-books";
+import ListOfBorrow from "@/pages/admin/list-of-borrows";
+import Dashboard from "@/pages/admin/admin-dashboard";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -80,6 +82,14 @@ export default function Router() {
         {
           path: "/list-of-books",
           element: <ListOfBook />,
+        },
+        {
+          path: "/list-of-borrow",
+          element: <ListOfBorrow />,
+        },
+        {
+          path: "/admin-dashboard",
+          element: <Dashboard />,
         },
         {
           path: "*",
