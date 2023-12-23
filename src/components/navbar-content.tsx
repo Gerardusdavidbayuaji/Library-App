@@ -51,7 +51,6 @@ const NavbarContent: React.FC = () => {
               <DropdownMenuLabel>Hi, {user.full_name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild><Link to="/profile-page">Profile</Link></DropdownMenuItem>
-              <DropdownMenuItem asChild><Link to="/admin-dashboard">Dashboard</Link></DropdownMenuItem>
               </>
             )}
           <DropdownMenuItem onClick={() => toggleTheme()}>
